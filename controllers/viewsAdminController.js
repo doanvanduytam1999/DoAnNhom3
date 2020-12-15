@@ -60,14 +60,14 @@ exports.postAddCity = catchAsync(async (req, res, next) => {
     })
     res.send("oke!");
 })
-
+*/
 exports.getLogin = (req, res, next) => {
     res.status(200).render('admin/login', {
         pageTitle: 'Login',
         patch: '/login'
     })
 };
-
+/*
 exports.getEditService = catchAsync(async (req, res, next) => {
     const id = req.params.id;
     const foundTypeService = await TypeService.findById(id).populate('services');
@@ -88,7 +88,7 @@ exports.getService = catchAsync(async (req, res, next) => {
 });
 
 
-
+*/
 exports.getDashboard = catchAsync(async (req, res, next) => {
     const service = await Service.find();
     res.status(200).render('admin/dashboard', {
@@ -97,7 +97,7 @@ exports.getDashboard = catchAsync(async (req, res, next) => {
         patch: '/dashboard'
     })
 });
-
+/*
 exports.getAddService = catchAsync(async (req, res, next) => {
     res.status(200).render('admin/addService', {
         pageTitle: 'Add Service',

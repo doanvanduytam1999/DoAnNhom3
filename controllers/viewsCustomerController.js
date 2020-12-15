@@ -72,6 +72,7 @@ exports.getServiceCustomer = catchAsync(async (req, res, next) => {
 
     })
 });
+*/
 
 exports.getThongTin = (req, res, next) => {
 
@@ -80,6 +81,7 @@ exports.getThongTin = (req, res, next) => {
         patch: '/thongtin'
     })
 };
+
 exports.getSignin = catchAsync(async (req, res, next) => {
     const typeService = await TypeService.find();
     const kiemTralogin = await authController.isLoggedIn2(req.cookies.jwt);
@@ -100,7 +102,7 @@ exports.getLogin = catchAsync(async (req, res, next) => {
         patch: '/login'
     })
 });
-
+/*
 exports.postDatLich = catchAsync(async (req, res, next) => {
     console.log(req.body);
     const lichdat = await LichDat.create({
@@ -115,7 +117,7 @@ exports.postDatLich = catchAsync(async (req, res, next) => {
     })
     res.redirect('/get-schedule');
 });
-
+*/
 exports.postAddCustomer = catchAsync(async (req, res, next) => {
     const customer = await CustomerModel.create({
         hovaten: req.body.hovaten,
@@ -129,7 +131,7 @@ exports.postAddCustomer = catchAsync(async (req, res, next) => {
     })
     res.status(200).redirect('/login');
 });
-
+/*
 exports.getService = catchAsync(async (req, res, next) => {
     const id = req.params.id;
     const typeService = await TypeService.findById(id).populate('services');
@@ -157,6 +159,7 @@ exports.getAgency = catchAsync(async (req, res, next) => {
         Agencys: district.agencys
     });
 })
+*/
 exports.getProfile = catchAsync(async (req, res, next) => {
     const typeservice = await TypeService.find();
     const kiemTralogin = await authController.isLoggedIn2(req.cookies.jwt);
@@ -182,7 +185,7 @@ exports.postEditUser = catchAsync(async (req, res, next) => {
     );
     res.redirect('/profile');
 });
-
+/*
 exports.getLichDatTheoQuan = catchAsync(async (req, res, next) => {
     var today = new Date();
     var date = "";
@@ -214,7 +217,7 @@ exports.getLichDatTheoQuan = catchAsync(async (req, res, next) => {
     });
     res.send(result);
 });
-
+*/
 exports.postUpdatePassword = catchAsync(async (req, res, next) => {
     console.log(req.body);
     const kiemTralogin = await authController.isLoggedIn2(req.cookies.jwt);
@@ -233,4 +236,3 @@ exports.postUpdatePassword = catchAsync(async (req, res, next) => {
     res.redirect('/profile');
 });
 
- */

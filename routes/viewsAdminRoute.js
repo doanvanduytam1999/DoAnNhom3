@@ -10,9 +10,11 @@ const authController = require('../controllers/authController');
 
 const router = express.Router();
 
-/* router.get('/', viewsAdminController.getLogin);
+router.get('/', viewsAdminController.getLogin);
+/*
 router.get('/edit-Service/:id', authController.isLoggedInAdmin, viewsAdminController.getEditService);
-router.get('/dashboard', authController.isLoggedInAdmin,  viewsAdminController.getDashboard);
+*/router.get('/dashboard', authController.isLoggedInAdmin,  viewsAdminController.getDashboard);
+/*
 router.get('/add-Service', authController.isLoggedInAdmin, viewsAdminController.getAddService);
 router.get('/service', authController.isLoggedInAdmin, viewsAdminController.getService);
 
