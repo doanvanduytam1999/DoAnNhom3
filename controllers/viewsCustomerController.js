@@ -32,7 +32,7 @@ exports.getHomePage = (req, res, next) => {
         pageTitle: 'Đặt lịch',
         patch: '/schedule'
     })
-});
+}); */
 exports.getTypeService = catchAsync(async (req, res, next) => {
     console.log(req.session.view);
     const typeService = await TypeService.find().populate('services');
@@ -44,7 +44,7 @@ exports.getTypeService = catchAsync(async (req, res, next) => {
         patch: '/service'
     })
 });
-*/
+
 exports.getServiceHome = catchAsync(async (req, res, next) => {
     const typeService = await TypeService.find();
     const kiemTralogin = await authController.isLoggedIn2(req.cookies.jwt);
@@ -56,7 +56,7 @@ exports.getServiceHome = catchAsync(async (req, res, next) => {
         patch: '/'
     })
 });
-/*
+
 exports.getServiceCustomer = catchAsync(async (req, res, next) => {
     const option = req.params.index;
     const kiemTralogin = await authController.isLoggedIn2(req.cookies.jwt);
@@ -72,16 +72,16 @@ exports.getServiceCustomer = catchAsync(async (req, res, next) => {
 
     })
 });
-*/
 
-exports.getThongTin = (req, res, next) => {
+
+/* exports.getThongTin = (req, res, next) => {
 
     res.status(200).render('customer/thongtin', {
         pageTitle: 'ThongTin',
         patch: '/thongtin'
     })
 };
-
+*/
 exports.getSignin = catchAsync(async (req, res, next) => {
     const typeService = await TypeService.find();
     const kiemTralogin = await authController.isLoggedIn2(req.cookies.jwt);
@@ -102,8 +102,8 @@ exports.getLogin = catchAsync(async (req, res, next) => {
         patch: '/login'
     })
 });
-/*
-exports.postDatLich = catchAsync(async (req, res, next) => {
+
+/* exports.postDatLich = catchAsync(async (req, res, next) => {
     console.log(req.body);
     const lichdat = await LichDat.create({
         time: req.body.time,
@@ -131,7 +131,7 @@ exports.postAddCustomer = catchAsync(async (req, res, next) => {
     })
     res.status(200).redirect('/login');
 });
-/*
+
 exports.getService = catchAsync(async (req, res, next) => {
     const id = req.params.id;
     const typeService = await TypeService.findById(id).populate('services');
@@ -139,9 +139,9 @@ exports.getService = catchAsync(async (req, res, next) => {
         status: 'success',
         Services: typeService.services
     });
-})
+});
 
-exports.getDistrict = catchAsync(async (req, res, next) => {
+/* exports.getDistrict = catchAsync(async (req, res, next) => {
     const id = req.params.id;
     const city = await CityModel.findById(id).populate('districts');
     res.status(200).json({

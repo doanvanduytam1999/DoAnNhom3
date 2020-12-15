@@ -12,7 +12,7 @@ const HandleDate = require('../utils/handleDate');
 const UserCustomerSchema = require('../models/userCustomerModel');
 const { isLoggedIn } = require('./authController');
 
-/* exports.postService = catchAsync(async (req, res, next) => {
+exports.postService = catchAsync(async (req, res, next) => {
     const service = await ServiceModel.create({
         serviceName: "DỊCH VỤ GHÉP XƯƠNG",
         serviceItems: [
@@ -41,7 +41,7 @@ const { isLoggedIn } = require('./authController');
     res.send("oke!");
 })
 
-exports.postAddCity = catchAsync(async (req, res, next) => {
+/* exports.postAddCity = catchAsync(async (req, res, next) => {
     const district = await DistrictModel.create({
         districtName: "Quận 1",
         cityID: "5fc67e97c1dae73e50f12f70"
@@ -89,15 +89,13 @@ exports.getService = catchAsync(async (req, res, next) => {
 
 
 */
-exports.getDashboard = catchAsync(async (req, res, next) => {
     const service = await Service.find();
     res.status(200).render('admin/dashboard', {
         Service: service,
         pageTitle: 'Admin',
         patch: '/dashboard'
     })
-});
-/*
+
 exports.getAddService = catchAsync(async (req, res, next) => {
     res.status(200).render('admin/addService', {
         pageTitle: 'Add Service',
@@ -214,7 +212,7 @@ exports.postAddService = catchAsync(async (req, res, next) => {
     res.redirect('/admin/dashboard');
 });
 //List admin
-exports.getListadmin = catchAsync(async (req, res, next) => {
+/* exports.getListadmin = catchAsync(async (req, res, next) => {
     const userAdmins = await UserAdminModel.find();
     res.status(200).render('admin/listadmin', {
         UserAdmins: userAdmins,
