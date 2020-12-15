@@ -1,0 +1,73 @@
+
+<%- include('../include/header_customer') %>
+<link rel="stylesheet" href="/css/content.css">
+
+</head>
+<body>
+  <%- include('../include/menu_customer') %> 
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="text-content">
+              <h2>Đặt Lịch Hẹn</h2>
+              <p>Quý khách vui lòng để lại thông tin</p>
+          </div>
+            <div class="card shadow from">
+              <form action="/datlich" method="POST" enctype="application/x-www-form-urlencoded">
+                
+               <input hidden value="<%= KiemTralogin.id %>" name="id">
+                <div class="from-data">
+                  <!--Lua chon dich vu -->
+                  <select class="loaiservice"  name="loaiservice" id="loaiservice">
+                    <option  value="0">---Chọn dịch vụ---</option>
+                    <% TypeService.forEach(function(element){ %>
+                      <option class="loaiDV" value="<%= element.id  %>"><%= element.typeServiceName  %></option>
+                    <% }); %>
+                  </select>
+                  <select class="service" name="id_service" id="id_service">
+                    <option  value="0">---Chọn loại dịch vụ---</option>
+                  </select>
+                 <br>
+                 <!--Lua chon dia chi-->
+                  <select class="district" id="id_city" name="id_city">
+                    <option  value="0">---Chọn thành phố---</option>
+                    <% City.forEach(function(element){ %>
+                    <option value="<%= element.id %>"><%= element.cityName %></option>
+                    <% }); %>
+                  </select>
+                  <select class="district" id="id_district" name="district">
+                    <option value="0">---Chọn chi nhánh---</option>
+                   
+                  </select>
+                  <select class="district" id="id_agency" name="agency">
+                    <option value="0">---Chọn địa chỉ---</option>
+                  </select>
+                </div>
+                <div class="from-data" >
+                  <input type="text" name="time"  id="start" placeholder="Chọn lịch hẹn...">
+                    
+                </div>
+                <div class="from-data">
+                  <input type="text" placeholder="Ghi chú... " name="note">
+                </div>
+                <button class="btn-danger " type="submit">Đặt Lịch</button>
+               </div>
+              </form>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <%- include('../include/footer') %>
+  <%- include('../include/script_customer') %>
+  <%- include('../include/end') %>
+
+
+
+
+  
+

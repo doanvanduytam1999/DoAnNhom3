@@ -1,0 +1,80 @@
+<%- include('../include/header') %>
+</head>
+<body >
+  <%- include('../include/menu') %>
+  <%- include('../include/navagation') %>
+  <div class="main-container">
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-12 col-sm-6">
+                <div class="card">
+                    <div class="card-header">
+                        Danh sách lịch hẹn
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <form class="form-inline" action="/admin/list-schedule/searchPhone" method="POST" enctype="application/x-www-form-urlencoded">
+                                    <div class="form-group mb-2 mr-2">
+                                        <label class="sr-only">Tìm Kiếm</label>
+                                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Search phone" value="<%=Phone %>">
+                                    </div>
+                                    <button type="submit" class="btn btn-info mb-2">Tìm Kiếm</button>
+                                </form>
+                            </div>
+                            <div class="col-lg-4">
+                                <form class="form-inline" action="/admin/list-schedule/filter" method="POST" enctype="application/x-www-form-urlencoded">
+                                    <div class="form-group mb-2 mr-2">
+                                        <select class="form-control" id="date" name="date">
+                                            <% SevenDay.forEach(function(element){ 
+                                                if(element == Ngay){ %>
+                                                <option value="<%= element %>" selected><%= element %></option>
+                                                <% }else{ %>
+                                                <option value="<%= element %>"><%= element %></option>
+                                                <% }%>
+                                            <% })%>
+                                        </select>
+                                      </div>
+                                    <button type="submit" class="btn btn-info mb-2">Lọc</button>
+                                </form>
+                            </div>
+                            <div class="col-lg-2">
+                                <a href="/admin/list-schedule" class="btn btn-success mb-2" style="height:40px;width: 95px; font-size: 18px; color: #fff;"><i class="fas fa-file"></i></a>
+                            </div>
+                        </div>
+                        <hr>
+                        <h5 class="card-title">Danh Sách lịch hẹn</h5>
+                            <table class="table table-hover table-sm table-responsive-lg">
+                                <thead>
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th scope="col">Tên khách hàng</th>
+                                    <th scope="col">Số điện thoại</th>
+                                    <th scope="col">Trạng thái</th>
+                                    <th scope="col">Thời gian</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <% var i = 1;  Schedules.forEach(function(element){ %>
+                                    <tr>
+                                        <th scope="row"><%= i %></th>
+                                        <td><%= element.cunstomerID.hovaten %></td>
+                                        <td><%= element.cunstomerID.phone %></td>
+                                        <td><%= element.status %></td>
+                                        <td><%= element.time %></td>
+                                        <td class="column-verticallineMiddle form-inline">
+                                            <a href="/admin/detail-schedule/<%= element.id %>" class="mr-1"><i class="fas fa-eye"></i></a>
+                                        </td>
+                                    </tr>
+                                    <% i++; }) %>
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </div>
+  </div>
+  <%- include('../include/script') %>
+  <%- include('../include/end') %>

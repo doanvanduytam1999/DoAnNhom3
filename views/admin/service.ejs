@@ -1,0 +1,27 @@
+<%- include('../include/header') %>
+</head>
+<body >
+  <%- include('../include/menu') %>
+  <%- include('../include/navagation') %>
+  <div class="main-container">
+    <div class="container-fluid">
+    <div class="row">
+      <div class="card shadow">
+        <div class="card-header title text-center"> 
+          Chỉnh sửa dịch vụ 
+        </div>
+        <div class="card-body">
+        <% Service.forEach(function(element) { %>
+        <a href="/admin/edit-Service/<%= element.id %>"><p><%= element.typeServiceName %></p></a>
+        <% }); %>
+        </div>
+        <div class="add">
+          <a class="add1" href="/admin/add-Service" ></i>Thêm dịch vụ</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  </div>
+  <%- include('../include/script') %>
+  <%- include('../include/end') %>

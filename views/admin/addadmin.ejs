@@ -1,0 +1,59 @@
+<%- include('../include/header.ejs') %>
+</head>  
+<body>
+  <%- include('../include/menu') %>
+  <%- include('../include/navagation') %>
+  <div class="main-container">
+
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-6 ">
+                    <div class="card">
+                        <div class="card-header">
+                          <p class="title text-center">Add User Admin</p>
+                          
+                        </div>
+                        <div class="card-body">
+                            <form class="form-add-admin" action="/admin/add-admin" method="POST" enctype="application/x-www-form-urlencoded">
+                                <div class="form-group">
+                                    <label for="username">User name</label>
+                                    <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter username" name="username">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="email">Email address</label>
+                                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp"  placeholder="Enter email" name="email">
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password"  placeholder="Password" name="password">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="confirmPassword">Confirm Password</label>
+                                      <input type="password" class="form-control" id="passwordConfirm"  placeholder="Confirm Password" name="passwordConfirm">
+                                  </div>
+                                  <label class="my-1 mr-2" for="role">Role For User Admin</label>
+                                  <select class="custom-select my-1 mr-sm-2" id="role" name="role">
+                                      <option selected>Choose role for user admin</option>
+                                      <option value="Admin">Admin</option>
+                                      <option value="LeTan">Lễ Tân</option>
+                                      <option value="BacSi ">Bác sĩ</option>
+                                  </select>
+                                 
+                                  <div class="form-group-inline">
+                                    <br>  
+                                      <button type="submit"class="btn btn-success">Thêm Tài Khoản</button>
+                                      <a href="/admin/list-admin"style="height:37px;width: 95px; font-size: 18px; color: #fff;" class="btn btn-info">Trở về</a>
+                                  </div>
+                              </form>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        <hr>
+  
+        </div>
+    </main>
+  </div>
+  <%- include('../include/script.ejs') %>
+<%- include('../include/end.ejs') %>

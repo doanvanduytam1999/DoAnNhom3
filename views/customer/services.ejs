@@ -1,0 +1,99 @@
+<%- include('../include/header_customer') %>
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/css/profile.css">
+<style>
+  .card{
+    margin-top: 100px;
+  }
+  .title span{
+  color: #4CCEE8;
+  }
+.title{
+  color: #000;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  }
+  .serviceName{
+    color: #000;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight:600;
+    margin-bottom: 10px;
+  }
+  .content{
+    font-size: 30px;
+  }
+</style>
+</head>
+<body>
+  <%- include('../include/menu_customer') %>
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header text-center">
+                <span class="content">Bảng giá dịch vụ tại </span><span class="title">Nha<span>Khoa</span></span>
+              </div>
+              <div class="card-body table-responsive">
+                <div  class="text-center serviceName ">Dịch vụ <%= MotLoaiSV.typeServiceName %></div>
+                <table class="table table-bordered" >
+                  <thead>
+                    <tr>
+                      <th scope="col">Dịch vụ</th>
+                      <th scope="col">Đơn vị</th>
+                      <th scope="col">Giá</th>
+                      <th scope="col">Bảo hành</th>
+                    </tr>
+                  </thead>
+                 
+                  <tbody class="tbody collection">
+                   
+                    <% ServiceItem.forEach(function(element) {%>
+                    <tr  class="collection-item" >
+                      <th scope="row" >
+                        <%= element.name %>
+                      </th>
+                      <td>
+                        <%= element.unit %>
+                      </td>
+                      <td>
+                        <%= element.price %>
+                      </td>
+                      <td>
+                        <%= element.guarantee %>
+                      </td>
+                      
+                      
+                    </tr>
+                    
+                    <% }); %>
+                    
+                  </tbody>
+                  
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+
+  <%- include('../include/footer') %>
+  <%- include('../include/script') %>
+  <%- include('../include/end') %>

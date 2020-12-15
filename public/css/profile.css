@@ -1,0 +1,51 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.card{
+    border: 0px;
+}
+.profile img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.profile .title{
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.user{
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.tbl_profie{
+    display: inline-block;
+    width: 600px;
+    
+}
+.tbl_profie tr th, .tbl_profie tr td{
+    margin-top: 20px;
+   
+}
+.tbl_profie tr th{
+    float: left;
+}
+.tbl_profie tr td input{
+    width: 400px;
+    border: 0px;
+    border-bottom: 1px solid;
+    padding-left: 10px;
+}
+.tbl_profie tr td input:focus{
+    outline: none;
+}
+.chinhsua{
+    display: inline-table;
+    margin-top: 200px;
+   float: right;
+    
+
+}
+

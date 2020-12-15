@@ -1,0 +1,76 @@
+<%- include('../include/header') %>
+
+</head>
+<body >
+  <%- include('../include/menu') %>
+  <%- include('../include/navagation') %>
+  <div class="main-container">
+
+    <div class="row">
+      <div class="card">
+        <form action="/admin/deleteTypeService/<%= FoundService.id  %>" method="POST" enctype="application/x-www-form-urlencoded">
+          <button type="submit" class="btn btn-delete btn-danger">Xóa dịch vụ</button>
+        </form>
+      </div>
+      
+
+      <form action="/admin/edit-Service/<%= FoundService.id %>" method="POST" enctype="application/x-www-form-urlencoded">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header text-center title">
+            
+            Chỉnh sửa dịch vụ <input type="text" name="typeServicename" value="<%= FoundService.typeServiceName %>"> 
+            
+            
+          </div>
+          <div class="card-body">
+
+              <table class="table table-bordered" >
+                <thead>
+                  <tr>
+                    <th scope="col">Dịch vụ</th>
+                    <th scope="col">Đơn vị</th>
+                    <th scope="col">Giá</th>
+                    <th scope="col">Bảo hành</th>
+                  </tr>
+                </thead>
+                <% i = 0; %>
+               
+                <tbody class="tbody collection">
+                  <% FoundService.services.forEach(function(element) { %>
+                    <input type="text" class="id" name="id" id="<%= i %>" value="<%= element.id %>" hidden >
+                  <tr  class="collection-item" >
+                    <th scope="row" >
+                      <input type="text" class="input_data" name="dichvu" value="<%= element.name %>">
+                    </th>
+                    <td>
+                      <input type="text" class="input_data" name="donvi" value="<%= element.unit %>">
+                    </td>
+                    <td>
+                      <input type="text"  class="input_data" name="gia" value="<%= element.price %>">
+                    </td>
+                    <td>
+                      <input type="text" class="input_data" name="baohanh" value="<%= element.guarantee %>">
+                    </td>
+                    <td>
+                    <a class="delete-item secondary-content remove"><i class="fas fa-trash-alt" id="<%= i %>"></i></a>
+                    </td>
+                    
+                  </tr>    
+                  <% i++; }); %>
+                </tbody>
+              
+                
+              </table>
+              <button type="submit" class="btn btn-success">Cập nhật</button>
+              <button type="button" class="btn btn-primary" onclick="addService()" > Thêm</button>
+             
+            
+          </div>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+  <%- include('../include/script') %>
+  <%- include('../include/end') %>

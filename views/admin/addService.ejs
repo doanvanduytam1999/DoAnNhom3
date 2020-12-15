@@ -1,0 +1,63 @@
+<%- include('../include/header') %>
+
+</head>
+<body >
+  <%- include('../include/menu') %>
+  <%- include('../include/navagation') %>
+  <div class="main-container">
+    <div class="row">
+      <form action="/admin/add-Service" method="POST" enctype="application/x-www-form-urlencoded">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header text-center title">
+            
+            Thêm dịch vụ mới
+          </div>
+          <div class="card-body ">
+            <h3 >Tên dịch vụ mới <input type="text" class="input_ten text-center" name="servicename"></h3>
+            <form> 
+              <table class="table table-bordered" >
+                <thead>
+                  <tr>
+                    <th scope="col">Dịch vụ</th>
+                    <th scope="col">Đơn vị</th>
+                    <th scope="col">Giá</th>
+                    <th scope="col">Bảo hành</th>
+                  </tr>
+                </thead>
+                <tbody class="tbody collection">
+                  
+                  <tr  class="collection-item" >
+                    <th scope="row">
+                      <input type="text" class="input_data" name="dichvu" >
+                    </th>
+                    <td>
+                      <input type="text" class="input_data" name="donvi" >
+                    </td>
+                    <td>
+                      <input type="text"  class="input_data" name="gia" >
+                    </td>
+                    <td>
+                      <input type="text" class="input_data" name="baohanh" >
+                    </td>
+                    <td>
+                      <a class="delete-item secondary-content remove"><i class="fas fa-trash-alt"></i></a>
+                    </td>
+                   
+                  </tr>
+  
+                </tbody>
+                
+              </table>
+              <button type="submit" class="btn btn-success">Thêm dịch vụ</button>
+              <button type="button" class="btn btn-primary" onclick="addService()" > Thêm</button>
+             
+            </form>
+          </div>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+  <%- include('../include/script1') %>
+  <%- include('../include/end') %>

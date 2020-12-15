@@ -1,0 +1,114 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  box-sizing: border-box;
+  
+}
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  color: #000;
+  height: 60px;
+  width: 100%;
+}
+.logo a{
+  text-decoration: none;
+}
+.title{
+  color: #000;
+  font-size: 35px;
+  text-transform: uppercase;
+  
+  font-weight: 900;
+}
+.title span{
+  color: #4CCEE8;
+}
+
+nav ul li{
+  display: inline-block;
+  line-height: 60px;
+  margin-top: 20px;
+  position: relative;
+}
+a.active,.list-menu li .item-menu:hover{
+  background: #f3f3f3;
+  transition: all 1s;
+  text-decoration: none;
+}
+nav ul li a{
+  color: #000;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+nav ul li a i{
+  
+  font-size: 11px;
+  margin-left: 5px;
+  
+}
+
+.list-menu li ul{
+  color: #000;
+  font-size: 15px;
+  display: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  position: absolute;
+  background-color: #fff;
+  z-index: 4;
+  padding: 10px;
+  border-top: 3px solid #4CCEE8;
+}
+.list-menu li:hover ul{
+  
+  display: block;
+ 
+}
+.dropdown{
+  
+  line-height: 37px;
+
+}
+.item li a{
+  color: black;
+  font-size: 15px;
+  
+  border-radius: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.item li{
+  line-height: 40px;
+  width: 210px;
+  border-radius: 3px;
+}
+.item li:hover{
+  background-color: #f3f3f3;
+  
+}
+
+.schedule{
+  color: #Fff;
+  font-weight: 700;
+  background: #F00;
+  border-radius: 5px;
+}
+.dropdown-item{
+  text-transform: none;
+}
+.btn_logout{
+  text-transform: none;
+
+}
+.btn_logout:hover{
+  text-decoration: none;
+  background: #f3f3f3;
+  color: #000;
+}

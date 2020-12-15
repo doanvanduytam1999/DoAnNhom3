@@ -1,0 +1,58 @@
+<nav>
+  <div class="logo">
+    <a href="/"><div class="title">Nha<span>Khoa</span><i class="fas fa-tooth"></i></div></a>
+  </div>
+  <ul class="list-menu">
+    <li>
+      <a class="item-menu" href="#">Giới thiệu</a>
+    </li>
+    <li>
+      <a class="item-menu" href="#">Địa chỉ</a>
+    </li>
+    <li class="dropdown">
+      <a class="item-menu" href="/service">Dịch vụ <i class="fas fa-chevron-down"></i></a>
+      <ul class="item">
+        
+        <% TypeService.forEach(function(element) { %>
+        <li>
+          <a href="/get-services/<%= element.id %>"><%= element.typeServiceName %></a>
+        </li>
+       
+        <% }); %>
+
+      </ul>
+    </li>
+    <li>
+      <a class="item-menu" href="#">Khách hàng</a></li>
+    <li>
+      <a class="item-menu" href="#">Tin tức</a>
+    </li>
+    <li>
+      <a class="item-menu schedule" href="/get-schedule">Đặt lịch hẹn</a>
+    </li>
+    <li>
+      <% if( KiemTralogin == 'No'){ %>
+        <a class="item-menu" href="/login">Đăng nhập/Đăng kí</a>
+        <% }else{%>
+          <div class="dropdown">
+            <button class="btn btn_logout dropdown-toggle" type="button" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Xin chào <%= KiemTralogin.username %>
+            </button>
+          
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="/profile">Thông tin tài khoản</a>
+              <div class="dropdown-divider"></div>
+
+              <button type="button" class="logout dropdown-item" >Log out</button>
+            </div>
+          </div>
+
+        <% } %>
+
+
+      
+    </li>
+   
+  </ul>
+
+</nav>

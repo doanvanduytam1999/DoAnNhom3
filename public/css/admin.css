@@ -1,0 +1,93 @@
+.input_data{
+  width: 100%;
+  height: 40px;
+  font-size: 24px;
+}
+.input_ten{
+  width: 500px;
+  height: 40px;
+  font-size: 24px;
+}
+.btn{
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.title{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.remove{
+  font-size: 25px;
+  color: black;
+  border: 0px;
+
+}
+.btn-delete{
+  float: right;
+}
+.card{
+width: 100%;
+border: 0px;
+}
+.table{
+width: 100%;
+}
+.tbody td a i{
+  cursor: pointer;
+}
+.tbody td a i:hover{
+  color: blue;
+}
+
+
+.card-body a{
+  text-decoration: none;
+}
+.card-body a p{
+  font-size: 30px;
+  color: #000;
+  background: #f3f3f3;
+  height: 60px;
+  border-radius: 10px;
+  line-height: 60px;
+  padding-left: 20px;
+}
+.card-body a p:hover{
+  background: darkgray;
+  transition: 0.7s;
+}
+.card a {
+ text-decoration: none; 
+ font-size: 20px;
+ 
+ color: #000;
+ width: 200px;
+ height: 50px;  
+}
+.add{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.add1{
+  
+  color: black;
+  width: 200px;
+  border-radius: 12.5px;
+  height: 50px;   
+  line-height: 50px;
+  background:  #21dd72;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 30px;
+}
+
+.add1:hover{
+  background:#1ab65e;
+  color: #fff;
+  transition: 1s;
+}
+

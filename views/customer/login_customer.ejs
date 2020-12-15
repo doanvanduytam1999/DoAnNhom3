@@ -1,0 +1,31 @@
+<%- include('../include/header_customer') %>
+<link rel="stylesheet" href="/css/sign-in.css">
+</head>
+<body>
+  <%- include('../include/menu_customer') %>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="warp shadow-lg">
+            <h2>Đăng Nhập
+            </h2>
+              <form class="form-login">
+                <input type="text" placeholder="Nhập tên tài khoản..." id="username">
+                
+                <input type="password" placeholder="Nhập mật khẩu..." id="password">
+                <a href="/sign-in">Chưa có tài khoản? Đăng kí ngay ?</a>
+                <button  type="submit" onclick="loader()" >Login
+                  <span id="overlay">
+                  <span class="spinner"></span> 
+                </span>
+                </button>
+                <a href="#">Quên mật khẩu ?</a>
+              </form>
+          </div> 
+        </div>
+      </div>
+    </div>   
+  </div>
+  <%- include('../include/script_customer') %>
+  <%- include('../include/end') %>

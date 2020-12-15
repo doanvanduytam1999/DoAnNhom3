@@ -1,0 +1,86 @@
+<%- include('../include/header_customer') %>
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/css/profile.css">
+
+
+</head>
+
+<body>
+    <%- include('../include/menu_customer') %>
+    <hr>
+    <div class="container text-center">
+        <div class="profile">
+            <p class="title">Thông tin tài khoản</p>
+            <img src="/images/avatar.jpg" alt="" srcset="">
+            <div class="user"><%= KiemTralogin.username %></div>
+
+            <form action="/editUser" method="POST" enctype="application/x-www-form-urlencoded">
+                <table class="tbl_profie">
+                    <tr>
+                        <th>Họ tên:</th>
+                        <td><input type="text" name="hovaten" value="<%= KiemTralogin.hovaten %>"></td>
+                    </tr>
+                    <tr>
+                        <th>Tên tài khoản:</th>
+                        <td><input type="text" name="username" value="<%= KiemTralogin.username %>" readonly></td>
+                    </tr>
+                    <tr>
+                        <th>Email:</th>
+                        <td><input type="text" value="<%= KiemTralogin.email %>" name="email"></td>
+                    </tr>
+                    <tr>
+                        <th>Số điện thoại:</th>
+                        <td><input type="text" name="phone" value="<%= KiemTralogin.phone %>"></td>
+                    </tr>
+
+                    <button type="submit" class="btn btn-success chinhsua">Chỉnh sửa</button>
+                </form>
+                    <tr>
+                        <th>Mật khẩu:</th>
+                        <td><a class="btn btn-danger" href="" data-toggle="modal" data-target="#myModal">Thay đổi mật
+                                khẩu</a>
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal-dialog">
+                                    <form action="/updatePassword" method="POST"
+                                        enctype="application/x-www-form-urlencoded">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                                                <h4 class="modal-title">Thay đổi mật khẩu</h4>
+                                            </div>
+                                            <div class="modal-body row">
+                                                <div class="col-auto">
+                                                    <p>Mật khẩu mới: <input type="password" name="matkhaumoi"></p>
+                                                    <p>Xác nhận mật khẩu mới: <input type="password"
+                                                            name="xacnhanmatkhaumoi"></p>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <div class="col-auto ">
+                                                    <button type="submit" class="btn btn-info">Cập nhật</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                        </td>
+                    </tr>
+                </table>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+
+    </div>
+
+
+
+
+    <%- include('../include/footer') %>
+    <%- include('../include/script_customer') %>
+    <%- include('../include/end') %>

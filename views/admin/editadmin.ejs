@@ -1,0 +1,139 @@
+<%- include('../include/header') %>
+  </head>
+
+  <body>
+    <%- include('../include/menu') %>
+      <%- include('../include/navagation') %>
+        <div class="main-container">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="d-flex justify-content-center mt-2">
+                    <img class="form__admin-photo card-img-top d-flex" src="" alt="User photo">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Information</h5>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Username: <%= User.username %>
+                    </li>
+                    <li class="list-group-item">Email: <%= User.email %>
+                    </li>
+                    <li class="list-group-item">Role: <%= User.role %>
+                        </td>
+                    </li>
+                    <li class="list-group-item text-center">
+
+                      <button class="btn btn-success btn-lg" data-target="#updatePasswordAdminModal"
+                        data-toggle="modal">Change Password</button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="modal" id="updatePasswordAdminModal" tabindex="1">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title">Update Password Of</h4>
+                      </div>
+                      <div class="modal-body">
+                        <form class="form-update-password" action="/admin/changePasswordUserAdmin/<%= User.id %>" method="POST" enctype="application/x-www-form-urlencoded">
+                          <div class="form-group">
+                            <label for="password">Password</label>
+                            <input class="form-control" type="password" name="password" id="password"
+                              placeholder="Password">
+                          </div>
+                          <div class="form-group">
+                            <label for="passwordConfirm">PasswordConfirm</label>
+                            <input class="form-control" type="password" name="passwordConfirm" id="passwordConfirm"
+                              placeholder="Password Confirm">
+                          </div>
+                          <div class="form-group">
+                            <input class="form-control" type="hidden" name="id" id="id" value="">
+                          </div>
+                          <div class="modal-footer">
+                            <button class="btn btn-primary" type="submit">Save</button>
+                            <button class="btn btn-primary" data-dismiss="modal">Close</button>
+                          </div>
+                        </form>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="card">
+                  <div class="card-header">
+                    Update Information Account
+                  </div>
+                  <div class="card-body">
+                    <form class="form-updateAdmin" action="/admin/editAdmin/<%= User.id %>" method="post"
+                      enctype="application/x-www-form-urlencoded">
+                      <div class="form-group">
+                        <label for="username">User name</label>
+                        <input type="text" class="form-control" id="username" aria-describedby="emailHelp"
+                          name="username" value="<%= User.username %>" required maxlength="50">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email"
+                          value="<%= User.email %>" required>
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                          else.</small>
+                      </div>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text" for="role">Role</label>
+                        </div>
+                        <select class="custom-select" id="role" name="role">
+                          <option selected>
+                            <%= User.role %>
+                          </option>
+                          <% if(User.role != "Admin" ){ %>
+                            <option value="Admin">Admin</option>
+                          <% }%>
+                          <% if(User.role !="LeTan" ){ %>
+                            <option value="LeTan">Lễ tân</option>
+                          <% }%>
+                          <% if(User.role !="BacSi" ){ %>
+                              <option value="BacSi">Bác sĩ</option>
+                          <% }%>
+
+
+                        </select>
+                      </div>
+                      <fieldset class="form-group">
+                        <div class="row">
+                          <legend class="col-form-label col-sm-2 pt-0">Active</legend>
+                          <div class="col-sm-10">
+                            <div class="form-check-inline">
+                              <input class="form-check-input" type="radio" name="active" id="activeTrue" value="true"
+                                <%=User.active.toString()==="true" ? "checked" : "" %>>
+                              <label class="form-check-label" for="activeTrue">
+                                True
+                              </label>
+                            </div>
+                            <div class="form-check-inline">
+                              <input class="form-check-input" type="radio" name="active" id="activeFalse" value="false"
+                                <%=User.active.toString()==="false" ? "checked" : "" %> >
+                              <label class="form-check-label" for="activeFalse">
+                                False
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                      <div class="form-group-inline">
+                        <button type="submit" class="btn btn-primary">Cập Nhật</button>
+                        <a href="/admin/list-admin" class="btn btn-info" style="height:40px;width: 95px; font-size: 18px; color: #fff;">Trở Về</a>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <%- include('../include/script') %>
+            <%- include('../include/end') %>

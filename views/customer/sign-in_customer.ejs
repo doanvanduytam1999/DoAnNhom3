@@ -1,0 +1,28 @@
+<%- include('../include/header_customer') %>
+<link rel="stylesheet" href="/css/sign-in.css">
+</head>
+<body>
+  <%- include('../include/menu_customer') %>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="warp shadow-lg">
+            <h2>Đăng kí
+            </h2>
+              <form action="/sign-up" method="POST" enctype="application/x-www-form-urlencoded">
+                <input type="text" placeholder="Nhập họ tên của bạn..." name="hovaten">
+                <input type="text" placeholder="Nhập tên tài khoản..." name="username">
+                <input type="gmail" placeholder="Nhập gmail của bạn..." name="email">
+                <input type="password" placeholder="Nhập mật khẩu..." name="password">
+                <input type="password" placeholder="Nhập lại mật khẩu..." name="passwordConfirm">
+                <input type="text" placeholder="Nhập số điện thoại..." name="phone">
+                <input type="submit" value="Đăng kí tài khoản">
+                <a href="/login">Đã có tài khoản ? Đăng nhập ngay !</a>
+              </form>
+          </div> 
+        </div>
+      </div>
+    </div>   
+  </div>
+  <%- include('../include/end') %>
