@@ -283,7 +283,7 @@ exports.postChangePassword = catchAsync(async (req, res, next) => {
 
 exports.getAddAdmin = async (req, res, next) => {
     res.status(200).render('admin/addadmin');
-}
+}*/
 //List Schedule
 exports.getListSchedule = catchAsync(async (req, res, next) => {
     const today = HandleDate.DateToString(new Date());
@@ -322,7 +322,7 @@ exports.getScheduleDate = catchAsync(async(req, res, next)=>{
         pageTitle: 'Danh sách lịch hẹn',
         patch: '/listschedule'
     });
-});
+}); 
 
 exports.getSearchPhone = catchAsync(async(req, res, next)=>{
     const phone = req.body.phone;
@@ -340,4 +340,4 @@ exports.getSearchPhone = catchAsync(async(req, res, next)=>{
         patch: '/listschedule'
     });
 
-}); */
+});
