@@ -32,7 +32,8 @@ exports.getHomePage = (req, res, next) => {
         pageTitle: 'Đặt lịch',
         patch: '/schedule'
     })
-}); */
+});
+*/
 exports.getTypeService = catchAsync(async (req, res, next) => {
     console.log(req.session.view);
     const typeService = await TypeService.find().populate('services');
@@ -73,13 +74,15 @@ exports.getServiceCustomer = catchAsync(async (req, res, next) => {
     })
 });
 
+
 /* exports.getThongTin = (req, res, next) => {
 
     res.status(200).render('customer/thongtin', {
         pageTitle: 'ThongTin',
         patch: '/thongtin'
     })
-};
+}; */
+
 exports.getSignin = catchAsync(async (req, res, next) => {
     const typeService = await TypeService.find();
     const kiemTralogin = await authController.isLoggedIn2(req.cookies.jwt);
@@ -89,7 +92,7 @@ exports.getSignin = catchAsync(async (req, res, next) => {
         pageTitle: 'Đăng kí',
         patch: '/sign-in'
     })
-}); */
+});
 exports.getLogin = catchAsync(async (req, res, next) => {
     const typeService = await TypeService.find();
     const kiemTralogin = await authController.isLoggedIn2(req.cookies.jwt);
@@ -100,8 +103,8 @@ exports.getLogin = catchAsync(async (req, res, next) => {
         patch: '/login'
     })
 });
-
-/* exports.postDatLich = catchAsync(async (req, res, next) => {
+/*
+exports.postDatLich = catchAsync(async (req, res, next) => {
     console.log(req.body);
     const lichdat = await LichDat.create({
         time: req.body.time,
@@ -115,8 +118,8 @@ exports.getLogin = catchAsync(async (req, res, next) => {
     })
     res.redirect('/get-schedule');
 });
-
-exports.postAddCustomer = catchAsync(async (req, res, next) => {
+*/
+/* exports.postAddCustomer = catchAsync(async (req, res, next) => {
     const customer = await CustomerModel.create({
         hovaten: req.body.hovaten,
         username: req.body.username,
@@ -157,7 +160,8 @@ exports.getAgency = catchAsync(async (req, res, next) => {
         Agencys: district.agencys
     });
 })
-exports.getProfile = catchAsync(async (req, res, next) => {
+*/
+/* exports.getProfile = catchAsync(async (req, res, next) => {
     const typeservice = await TypeService.find();
     const kiemTralogin = await authController.isLoggedIn2(req.cookies.jwt);
     res.status(200).render('customer/profile', {
@@ -181,7 +185,7 @@ exports.postEditUser = catchAsync(async (req, res, next) => {
         }
     );
     res.redirect('/profile');
-});
+}); 
 
 exports.getLichDatTheoQuan = catchAsync(async (req, res, next) => {
     var today = new Date();
@@ -233,4 +237,3 @@ exports.postUpdatePassword = catchAsync(async (req, res, next) => {
     res.redirect('/profile');
 });
  */
- 

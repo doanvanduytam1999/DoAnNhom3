@@ -89,14 +89,14 @@ exports.getService = catchAsync(async (req, res, next) => {
 
 
 
-/* exports.getDashboard = catchAsync(async (req, res, next) => {
+exports.getDashboard = catchAsync(async (req, res, next) => {
     const service = await Service.find();
     res.status(200).render('admin/dashboard', {
         Service: service,
         pageTitle: 'Admin',
         patch: '/dashboard'
     })
-}); */
+});
 
 exports.getAddService = catchAsync(async (req, res, next) => {
     res.status(200).render('admin/addService', {

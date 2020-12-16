@@ -5,8 +5,8 @@ const authController = require('../controllers/authController');
 
 const router = express.Router();
 
-//router.post('/login', authController.loginCustomer);
-//router.get('/logout', authController.logoutCustomer);
+router.post('/login', authController.loginCustomer);
+router.get('/logout', authController.logoutCustomer);
 router.get('/getService/:id', authController.isLoggedIn, CustomerController.getService);
 //router.get('/getDistrict/:id', authController.isLoggedIn, CustomerController.getDistrict);
 //router.get('/getAgency/:id', authController.isLoggedIn, CustomerController.getAgency);
