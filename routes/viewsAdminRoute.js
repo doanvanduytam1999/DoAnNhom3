@@ -28,11 +28,11 @@ router.post('/add-Service', authController.isLoggedInAdmin, viewsAdminController
 router.post('/editAdmin/:id', authController.isLoggedInAdmin, viewsAdminController.postEditUSerAdmin);
 router.post('/changePasswordUserAdmin/:id', authController.isLoggedInAdmin, viewsAdminController.postChangePassword);
 router.post('/add-admin', authController.isLoggedInAdmin, viewsAdminController.postAddUserAdmin);
-
+*/
 
 //Lits Schedule
 router.get('/list-schedule', authController.isLoggedInAdmin, viewsAdminController.getListSchedule)
 router.get('/detail-schedule/:id', authController.isLoggedInAdmin, viewsAdminController.getDetailSchedule);
 router.post('/list-schedule/searchPhone', authController.isLoggedInAdmin, viewsAdminController.getSearchPhone);
-router.post('/list-schedule/filter', authController.isLoggedInAdmin, viewsAdminController.getScheduleDate); */
+router.post('/list-schedule/filter', authController.isLoggedInAdmin, viewsAdminController.getScheduleDate); 
 module.exports = router;
