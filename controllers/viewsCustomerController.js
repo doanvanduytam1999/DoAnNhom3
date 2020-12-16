@@ -156,7 +156,7 @@ exports.getAgency = catchAsync(async (req, res, next) => {
         status: 'success',
         Agencys: district.agencys
     });
-})
+}) */
 exports.getProfile = catchAsync(async (req, res, next) => {
     const typeservice = await TypeService.find();
     const kiemTralogin = await authController.isLoggedIn2(req.cookies.jwt);
@@ -182,7 +182,7 @@ exports.postEditUser = catchAsync(async (req, res, next) => {
     );
     res.redirect('/profile');
 });
-
+/*
 exports.getLichDatTheoQuan = catchAsync(async (req, res, next) => {
     var today = new Date();
     var date = "";
