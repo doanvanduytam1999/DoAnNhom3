@@ -41,7 +41,7 @@ exports.postService = catchAsync(async (req, res, next) => {
     res.send("oke!");
 })
 
-/* exports.postAddCity = catchAsync(async (req, res, next) => {
+exports.postAddCity = catchAsync(async (req, res, next) => {
     const district = await DistrictModel.create({
         districtName: "Quận 1",
         cityID: "5fc67e97c1dae73e50f12f70"
@@ -60,14 +60,14 @@ exports.postService = catchAsync(async (req, res, next) => {
     })
     res.send("oke!");
 })
-*/
+
 exports.getLogin = (req, res, next) => {
     res.status(200).render('admin/login', {
         pageTitle: 'Login',
         patch: '/login'
     })
 };
-/*
+
 exports.getEditService = catchAsync(async (req, res, next) => {
     const id = req.params.id;
     const foundTypeService = await TypeService.findById(id).populate('services');
@@ -88,13 +88,14 @@ exports.getService = catchAsync(async (req, res, next) => {
 });
 
 
-*/
+exports.getDashboard = catchAsync(async (req, res, next) => {
     const service = await Service.find();
     res.status(200).render('admin/dashboard', {
         Service: service,
         pageTitle: 'Admin',
         patch: '/dashboard'
     })
+});
 
 exports.getAddService = catchAsync(async (req, res, next) => {
     res.status(200).render('admin/addService', {
@@ -212,7 +213,7 @@ exports.postAddService = catchAsync(async (req, res, next) => {
     res.redirect('/admin/dashboard');
 });
 //List admin
-/* exports.getListadmin = catchAsync(async (req, res, next) => {
+exports.getListadmin = catchAsync(async (req, res, next) => {
     const userAdmins = await UserAdminModel.find();
     res.status(200).render('admin/listadmin', {
         UserAdmins: userAdmins,
@@ -283,14 +284,14 @@ exports.postChangePassword = catchAsync(async (req, res, next) => {
 
 exports.getAddAdmin = async (req, res, next) => {
     res.status(200).render('admin/addadmin');
-}*/
+}
 //List Schedule
 exports.getListSchedule = catchAsync(async (req, res, next) => {
     const today = HandleDate.DateToString(new Date());
-    const schedules = await ScheduleModel.find({time: {'$regex' : `^${today}`, '$options' : 'i'}}).populate("cunstomerID");
+    const schedules = await ScheduleModel.find({ time: { '$regex': `^${today}`, '$options': 'i' } }).populate("cunstomerID");
     const sevenDay = HandleDate.sevenDay();
     res.status(200).render('admin/listschedule', {
-        Phone:"",
+        Phone: "",
         Ngay: today,
         SevenDay: sevenDay,
         Schedules: schedules,
@@ -301,7 +302,7 @@ exports.getListSchedule = catchAsync(async (req, res, next) => {
 
 exports.getDetailSchedule = catchAsync(async (req, res, next) => {
     const id = req.params.id;
-    const schedule = await ScheduleModel.findOne({_id: id}).populate("cunstomerID");
+    const schedule = await ScheduleModel.findOne({ _id: id }).populate("cunstomerID");
     console.log(schedule);
     res.status(200).render('admin/detailschedule', {
         Schedule: schedule,
@@ -310,30 +311,30 @@ exports.getDetailSchedule = catchAsync(async (req, res, next) => {
     });
 });
 
-exports.getScheduleDate = catchAsync(async(req, res, next)=>{
+exports.getScheduleDate = catchAsync(async (req, res, next) => {
     const ngay = req.body.date;
     const sevenDay = HandleDate.sevenDay();
-    const schedules = await ScheduleModel.find({time: {'$regex' : `^${ngay}`, '$options' : 'i'}}).populate("cunstomerID");
+    const schedules = await ScheduleModel.find({ time: { '$regex': `^${ngay}`, '$options': 'i' } }).populate("cunstomerID");
     res.status(200).render('admin/listschedule', {
-        Phone:"",
+        Phone: "",
         Ngay: ngay,
         SevenDay: sevenDay,
         Schedules: schedules,
         pageTitle: 'Danh sách lịch hẹn',
         patch: '/listschedule'
     });
-}); 
+});
 
-exports.getSearchPhone = catchAsync(async(req, res, next)=>{
+exports.getSearchPhone = catchAsync(async (req, res, next) => {
     const phone = req.body.phone;
-    const customer = await UserCustomerSchema.findOne({phone: phone});
+    const customer = await UserCustomerSchema.findOne({ phone: phone });
     var schedules = [];
-    if(customer){
-        schedules = await ScheduleModel.find({cunstomerID: customer.id}).populate("cunstomerID");
+    if (customer) {
+        schedules = await ScheduleModel.find({ cunstomerID: customer.id }).populate("cunstomerID");
     }
     res.status(200).render('admin/listschedule', {
         Phone: phone,
-        Ngay:"",
+        Ngay: "",
         SevenDay: [],
         Schedules: schedules,
         pageTitle: 'Danh sách lịch hẹn',

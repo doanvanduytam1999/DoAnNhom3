@@ -18,7 +18,7 @@ exports.getHomePage = (req, res, next) => {
         patch: '/'
     })
 };
-/* exports.getSchedule = catchAsync(async (req, res, next) => {
+exports.getSchedule = catchAsync(async (req, res, next) => {
     const service = await ServiceModel.find();
     const typeservice = await TypeService.find();
     const kiemTralogin = await authController.isLoggedIn2(req.cookies.jwt);
@@ -32,7 +32,7 @@ exports.getHomePage = (req, res, next) => {
         pageTitle: 'Đặt lịch',
         patch: '/schedule'
     })
-}); */
+});
 exports.getTypeService = catchAsync(async (req, res, next) => {
     console.log(req.session.view);
     const typeService = await TypeService.find().populate('services');
@@ -74,14 +74,14 @@ exports.getServiceCustomer = catchAsync(async (req, res, next) => {
 });
 
 
-/* exports.getThongTin = (req, res, next) => {
+exports.getThongTin = (req, res, next) => {
 
     res.status(200).render('customer/thongtin', {
         pageTitle: 'ThongTin',
         patch: '/thongtin'
     })
 };
-*/
+
 exports.getSignin = catchAsync(async (req, res, next) => {
     const typeService = await TypeService.find();
     const kiemTralogin = await authController.isLoggedIn2(req.cookies.jwt);
@@ -141,7 +141,7 @@ exports.getService = catchAsync(async (req, res, next) => {
     });
 });
 
-/* exports.getDistrict = catchAsync(async (req, res, next) => {
+exports.getDistrict = catchAsync(async (req, res, next) => {
     const id = req.params.id;
     const city = await CityModel.findById(id).populate('districts');
     res.status(200).json({
@@ -158,7 +158,7 @@ exports.getAgency = catchAsync(async (req, res, next) => {
         status: 'success',
         Agencys: district.agencys
     });
-}) */
+})
 
 exports.getProfile = catchAsync(async (req, res, next) => {
     const typeservice = await TypeService.find();
@@ -185,7 +185,6 @@ exports.postEditUser = catchAsync(async (req, res, next) => {
     );
     res.redirect('/profile');
 });
-/*
 exports.getLichDatTheoQuan = catchAsync(async (req, res, next) => {
     var today = new Date();
     var date = "";
@@ -217,7 +216,7 @@ exports.getLichDatTheoQuan = catchAsync(async (req, res, next) => {
     });
     res.send(result);
 });
-*/
+
 exports.postUpdatePassword = catchAsync(async (req, res, next) => {
     console.log(req.body);
     const kiemTralogin = await authController.isLoggedIn2(req.cookies.jwt);
