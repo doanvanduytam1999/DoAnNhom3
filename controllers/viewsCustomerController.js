@@ -100,7 +100,7 @@ exports.getLogin = catchAsync(async (req, res, next) => {
         patch: '/login'
     })
 });
-
+*/
 exports.postDatLich = catchAsync(async (req, res, next) => {
     console.log(req.body);
     const lichdat = await LichDat.create({
@@ -115,7 +115,7 @@ exports.postDatLich = catchAsync(async (req, res, next) => {
     })
     res.redirect('/get-schedule');
 });
-
+/*
 exports.postAddCustomer = catchAsync(async (req, res, next) => {
     const customer = await CustomerModel.create({
         hovaten: req.body.hovaten,
@@ -214,7 +214,7 @@ exports.getLichDatTheoQuan = catchAsync(async (req, res, next) => {
     });
     res.send(result);
 });
-
+*/
 exports.postUpdatePassword = catchAsync(async (req, res, next) => {
     console.log(req.body);
     const kiemTralogin = await authController.isLoggedIn2(req.cookies.jwt);
@@ -233,4 +233,3 @@ exports.postUpdatePassword = catchAsync(async (req, res, next) => {
     res.redirect('/profile');
 });
 
- */
