@@ -326,7 +326,7 @@ exports.getScheduleDate = catchAsync(async(req, res, next)=>{
     });
 }); 
 
-/*exports.getSearchPhone = catchAsync(async(req, res, next)=>{
+exports.getSearchPhone = catchAsync(async(req, res, next)=>{
     const phone = req.body.phone;
     const customer = await UserCustomerSchema.findOne({phone: phone});
     var schedules = [];
@@ -342,4 +342,4 @@ exports.getScheduleDate = catchAsync(async(req, res, next)=>{
         patch: '/listschedule'
     });
 
-}); */
+});
