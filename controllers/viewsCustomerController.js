@@ -102,7 +102,6 @@ exports.getLogin = catchAsync(async (req, res, next) => {
         patch: '/login'
     })
 });
-
 exports.postDatLich = catchAsync(async (req, res, next) => {
     console.log(req.body);
     const lichdat = await LichDat.create({
@@ -118,7 +117,7 @@ exports.postDatLich = catchAsync(async (req, res, next) => {
     res.redirect('/get-schedule');
 });
 
-exports.postAddCustomer = catchAsync(async (req, res, next) => {
+ exports.postAddCustomer = catchAsync(async (req, res, next) => {
     const customer = await CustomerModel.create({
         hovaten: req.body.hovaten,
         username: req.body.username,
@@ -185,6 +184,7 @@ exports.postEditUser = catchAsync(async (req, res, next) => {
     );
     res.redirect('/profile');
 });
+
 exports.getLichDatTheoQuan = catchAsync(async (req, res, next) => {
     var today = new Date();
     var date = "";
@@ -233,5 +233,4 @@ exports.postUpdatePassword = catchAsync(async (req, res, next) => {
             });
     }
     res.redirect('/profile');
-});
-
+}); 

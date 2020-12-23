@@ -5,5 +5,4 @@ const router = express.Router();
 
 router.post('/login', authController.loginAdmin);
 router.get('/logout', authController.logoutAdmin);
-
 module.exports = router;
