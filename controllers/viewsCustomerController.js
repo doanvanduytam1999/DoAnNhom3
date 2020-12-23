@@ -18,7 +18,7 @@ exports.getHomePage = (req, res, next) => {
         patch: '/'
     })
 };
-/* exports.getSchedule = catchAsync(async (req, res, next) => {
+exports.getSchedule = catchAsync(async (req, res, next) => {
     const service = await ServiceModel.find();
     const typeservice = await TypeService.find();
     const kiemTralogin = await authController.isLoggedIn2(req.cookies.jwt);
@@ -33,6 +33,7 @@ exports.getHomePage = (req, res, next) => {
         patch: '/schedule'
     })
 });
+/*
 exports.getTypeService = catchAsync(async (req, res, next) => {
     console.log(req.session.view);
     const typeService = await TypeService.find().populate('services');
@@ -72,7 +73,7 @@ exports.getServiceCustomer = catchAsync(async (req, res, next) => {
 
     })
 });
-
+*/
 exports.getThongTin = (req, res, next) => {
 
     res.status(200).render('customer/thongtin', {
@@ -80,6 +81,7 @@ exports.getThongTin = (req, res, next) => {
         patch: '/thongtin'
     })
 };
+
 exports.getSignin = catchAsync(async (req, res, next) => {
     const typeService = await TypeService.find();
     const kiemTralogin = await authController.isLoggedIn2(req.cookies.jwt);
@@ -100,7 +102,7 @@ exports.getLogin = catchAsync(async (req, res, next) => {
         patch: '/login'
     })
 });
-*/
+
 exports.postDatLich = catchAsync(async (req, res, next) => {
     console.log(req.body);
     const lichdat = await LichDat.create({
@@ -115,7 +117,7 @@ exports.postDatLich = catchAsync(async (req, res, next) => {
     })
     res.redirect('/get-schedule');
 });
-/*
+
 exports.postAddCustomer = catchAsync(async (req, res, next) => {
     const customer = await CustomerModel.create({
         hovaten: req.body.hovaten,
@@ -156,7 +158,7 @@ exports.getAgency = catchAsync(async (req, res, next) => {
         status: 'success',
         Agencys: district.agencys
     });
-}) */
+}) 
 exports.getProfile = catchAsync(async (req, res, next) => {
     const typeservice = await TypeService.find();
     const kiemTralogin = await authController.isLoggedIn2(req.cookies.jwt);
