@@ -12,7 +12,7 @@ const HandleDate = require('../utils/handleDate');
 const UserCustomerSchema = require('../models/userCustomerModel');
 const { isLoggedIn } = require('./authController');
 
-exports.postService = catchAsync(async (req, res, next) => {
+/* exports.postService = catchAsync(async (req, res, next) => {
     const service = await ServiceModel.create({
         serviceName: "DỊCH VỤ GHÉP XƯƠNG",
         serviceItems: [
@@ -88,6 +88,10 @@ exports.getService = catchAsync(async (req, res, next) => {
 });
 
 
+<<<<<<< HEAD
+=======
+*/
+>>>>>>> parent of c3a4712c... Merge branch 'nhan'
 exports.getDashboard = catchAsync(async (req, res, next) => {
     const service = await Service.find();
     res.status(200).render('admin/dashboard', {
@@ -96,7 +100,11 @@ exports.getDashboard = catchAsync(async (req, res, next) => {
         patch: '/dashboard'
     })
 });
+<<<<<<< HEAD
 
+=======
+/*
+>>>>>>> parent of c3a4712c... Merge branch 'nhan'
 exports.getAddService = catchAsync(async (req, res, next) => {
     res.status(200).render('admin/addService', {
         pageTitle: 'Add Service',

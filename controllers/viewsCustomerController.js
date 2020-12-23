@@ -44,7 +44,7 @@ exports.getTypeService = catchAsync(async (req, res, next) => {
         patch: '/service'
     })
 });
-
+*/
 exports.getServiceHome = catchAsync(async (req, res, next) => {
     const typeService = await TypeService.find();
     const kiemTralogin = await authController.isLoggedIn2(req.cookies.jwt);
@@ -56,7 +56,7 @@ exports.getServiceHome = catchAsync(async (req, res, next) => {
         patch: '/'
     })
 });
-
+/*
 exports.getServiceCustomer = catchAsync(async (req, res, next) => {
     const option = req.params.index;
     const kiemTralogin = await authController.isLoggedIn2(req.cookies.jwt);
@@ -72,8 +72,12 @@ exports.getServiceCustomer = catchAsync(async (req, res, next) => {
 
     })
 });
+*/
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of c3a4712c... Merge branch 'nhan'
 exports.getThongTin = (req, res, next) => {
 
     res.status(200).render('customer/thongtin', {
@@ -102,6 +106,10 @@ exports.getLogin = catchAsync(async (req, res, next) => {
         patch: '/login'
     })
 });
+<<<<<<< HEAD
+=======
+/*
+>>>>>>> parent of c3a4712c... Merge branch 'nhan'
 exports.postDatLich = catchAsync(async (req, res, next) => {
     console.log(req.body);
     const lichdat = await LichDat.create({
@@ -130,7 +138,7 @@ exports.postDatLich = catchAsync(async (req, res, next) => {
     })
     res.status(200).redirect('/login');
 });
-
+/*
 exports.getService = catchAsync(async (req, res, next) => {
     const id = req.params.id;
     const typeService = await TypeService.findById(id).populate('services');
@@ -138,7 +146,7 @@ exports.getService = catchAsync(async (req, res, next) => {
         status: 'success',
         Services: typeService.services
     });
-});
+})
 
 exports.getDistrict = catchAsync(async (req, res, next) => {
     const id = req.params.id;
